@@ -23,9 +23,9 @@ library(tidyr)
 ## Loading Data & Merging
 
 ```{r}
-leg <- read.csv("/Users/emmahuizenga/Desktop/IPPSR/Project 2/data/Gender Comp in State Leg.xlsx - Legislature Data.csv")
+leg <- read.csv("/Users/emmahuizenga/Desktop/IPPSR/Project 2/working files/data/Gender Comp in State Leg.xlsx - Legislature Data.csv")
 
-policy <- read.csv("/Users/emmahuizenga/Desktop/IPPSR/Project 2/data/(Shortened) CSPP_ State-Level Mandated Insurance Coverage - policy.csv") %>% 
+policy <- read.csv("/Users/emmahuizenga/Desktop/IPPSR/Project 2/working files/data/(Shortened) CSPP_ State-Level Mandated Insurance Coverage - policy.csv") %>% 
   select(-"any_policy")
 ```
 
@@ -323,9 +323,9 @@ p1 <- ggplot(data = df_women, aes(x = estimate, y = dependent_variable, color = 
            fill = "grey", alpha = 0.2) +
   geom_vline(xintercept = 0, linetype = "dashed", color = "black") + 
   labs(x = expression(tau ~ "(" * "Average Treatment Effect" * ")"),
-       y = "Women-Friendly Policies",
-       title = "ATEs on Women-Friendly Policy Outcomes",
-       subtitle = "Fig. 2.1") +
+       y = "Women-Friendly Policies") +
+       #title = "ATEs on Women-Friendly Policy Outcomes",
+       #subtitle = "Fig. 2.1") +
   theme_cowplot() +
   theme(axis.text.y = ggtext::element_markdown()) +
   scale_color_manual(values = c(
@@ -348,7 +348,7 @@ p1 <- ggplot(data = df_women, aes(x = estimate, y = dependent_variable, color = 
 
 p1
 
-ggsave("women.png", p1, width = 8, height = 5)
+ggsave("women_1.pdf", p1, width = 8, height = 5)
 ```
 
 ## Visualization Men
@@ -377,9 +377,9 @@ p2 <- ggplot(data = df_men, aes(x = estimate, y = dependent_variable, color = mo
            fill = "gray", alpha = 0.2) +
   geom_vline(xintercept = 0, linetype = "dashed", color = "black") + 
   labs(x = expression(tau ~ "(" * "Average Treatment Effect" * ")"),
-       y = "Men-Friendly Policies",
-       title = "ATEs on Men-Friendly Policy Outcomes",
-       subtitle = "Fig. 3.1") +
+       y = "Men-Friendly Policies")+
+       #title = "ATEs on Men-Friendly Policy Outcomes",
+      # subtitle = "Fig. 3.1") +
   theme_cowplot() +
   theme(axis.text.y = ggtext::element_markdown()) +
   scale_color_manual(values = c(
@@ -401,7 +401,7 @@ p2 <- ggplot(data = df_men, aes(x = estimate, y = dependent_variable, color = mo
 
 p2
 
-ggsave("men.png", p2, width = 8, height = 5)
+ggsave("men_1.pdf", p2, width = 8, height = 5)
 ```
 
 ## Visualization Trans
@@ -429,9 +429,9 @@ p3 <- ggplot(data = df_trans, aes(x = estimate, y = dependent_variable, color = 
            fill = "gray", alpha = 0.2) +
   geom_vline(xintercept = 0, linetype = "dashed", color = "black") + 
   labs(x = expression(tau ~ "(" * "Average Treatment Effect" * ")"),
-       y = "Trans-Friendly Policies",
-       title = "ATEs on Trans-Friendly Policy Outcomes",
-       subtitle = "Fig. 4.1") +
+       y = "Trans-Friendly Policies") +
+      # title = "ATEs on Trans-Friendly Policy Outcomes",
+      # subtitle = "Fig. 4.1") +
   theme_cowplot() +
   theme(axis.text.y = ggtext::element_markdown()) +
   scale_color_manual(values = c(
@@ -453,7 +453,7 @@ p3 <- ggplot(data = df_trans, aes(x = estimate, y = dependent_variable, color = 
 
 p3
 
-ggsave("trans.png", p3, width = 8, height = 5)
+ggsave("trans_1.pdf", p3, width = 8, height = 5)
 ```
 
 ## Negative grouping using all 3 models
@@ -482,7 +482,6 @@ tidy_models_neg_unadj <- bind_rows(lapply(names(models_neg_unadj), function(dv) 
 
 print(tidy_models_neg_unadj)
 ```
-
 
 # Adjusted model
 
@@ -526,8 +525,8 @@ tidy_models_neg_ols <- bind_rows(lapply(names(models_neg_ols), function(dv) {
 print(tidy_models_neg_ols)
 ```
 
-
 ## Visualization for Neg. Policies
+
 ```{r}
 tidy_models_neg_unadj <- tidy_models_neg_unadj %>%
   mutate(model_type = "Unadjusted")
@@ -541,7 +540,6 @@ tidy_models_neg_ols <- tidy_models_neg_ols %>%
 df_neg <- bind_rows(tidy_models_neg_unadj, tidy_models_neg, tidy_models_neg_ols) %>%
   filter(term == "prop_leg_women")
 ```
-
 
 ```{r}
 df_neg$dependent_variable <- factor(
@@ -659,8 +657,8 @@ predict_women <- ggplot(new_data_long, aes(x = prop_leg_women, y = predicted, co
   labs(
     x = "Proportion of Women in Legislature",
     y = "Probability of Policy Being Enacted",
-    subtitle = "Fig. 2.2",
-    title = "Estimated Effect of Women’s Representation on Women-Friendly Policy",
+   # subtitle = "Fig. 2.2",
+   # title = "Estimated Effect of Women’s Representation on Women-Friendly Policy",
     caption  = "NOTE: Displays aggregated variable treatment effects only",
     color = "Model Type"
   ) +
@@ -677,7 +675,7 @@ predict_women <- ggplot(new_data_long, aes(x = prop_leg_women, y = predicted, co
 
 predict_women
 
-ggsave("predict_women.png", predict_women, width = 8, height = 5)
+ggsave("predict_women_paper.pdf", predict_women, width = 8, height = 5)
 ```
 
 ## Plotting unadj., adj., and ols regressions for aggregated men-friendly policy
@@ -745,8 +743,8 @@ predict_men <- ggplot(new_data_long, aes(x = prop_leg_women, y = predicted, colo
   labs(
     x = "Proportion of Women in Legislature",
     y = "Probability of Policy Being Enacted",
-    subtitle = "Fig. 3.2",
-    title = "Estimated Effect of Women’s Representation on Men-Friendly Policy",
+   # subtitle = "Fig. 3.2",
+   # title = "Estimated Effect of Women’s Representation on Men-Friendly Policy",
     caption  = "NOTE: Displays aggregated variable treatment effects only",
     color = "Model Type"
   ) +
@@ -761,7 +759,7 @@ predict_men <- ggplot(new_data_long, aes(x = prop_leg_women, y = predicted, colo
         plot.subtitle = element_text(face = "bold",
                                       size = 15)) 
 
-ggsave("predict_men.png", predict_men, width = 8, height = 5)
+ggsave("predict_men_paper.pdf", predict_men, width = 8, height = 5)
 ```
 
 ## Plotting unadj., adj., and ols regressions for aggregated trans-friendly policy
@@ -829,8 +827,8 @@ predict_trans <-ggplot(new_data_long, aes(x = prop_leg_women, y = predicted, col
   labs(
     x = "Proportion of Women in Legislature",
     y = "Probability of Policy Being Enacted",
-    subtitle = "Fig. 4.2",
-    title = "Estimated Effect of Women’s Representation on Trans-Friendly Policy",
+    #subtitle = "Fig. 4.2",
+    #title = "Estimated Effect of Women’s Representation on Trans-Friendly Policy",
     caption = "NOTE: Displays aggregated variable treatment effects only",
     color = "Model Type"
   ) +
@@ -845,7 +843,7 @@ predict_trans <-ggplot(new_data_long, aes(x = prop_leg_women, y = predicted, col
         plot.subtitle = element_text(face = "bold",
                                       size = 15)) 
 
-ggsave("predict_trans.png", predict_trans, width = 8, height = 5)
+ggsave("predict_trans_paper.pdf", predict_trans, width = 8, height = 5)
 ```
 
 ## MidSure Figures (ignore)
@@ -968,5 +966,3 @@ save_as_image(flextable(tidy_models_women_lm), path = "tidy_models_women_lm.png"
 save_as_image(flextable(tidy_models_men_lm), path = "tidy_models_men_lm.png")
 save_as_image(flextable(tidy_models_trans_lm), path = "tidy_models_trans_lm.png")
 ```
-
-

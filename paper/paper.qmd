@@ -1,8 +1,9 @@
 ---
 title: "Introducing a State-Level Dataset on Gender-Specific Healthcare: Do Women Legislators Expand Post-ACA Coverage?"
 author: "Emma Huizenga"
-date: "today"
+date: today
 date-format: "MMM D, YYYY"
+
 format:
   pdf:
     documentclass: article
@@ -10,18 +11,29 @@ format:
     toc: false
     geometry: margin=1in
     fontsize: 12pt
+    colorlinks: true
+    linkcolor: blue
+    urlcolor: blue
+    citecolor: blue
+    hyperrefoptions:
+      - colorlinks=true
+      - linkcolor=blue
+      - urlcolor=blue
+      - citecolor=blue
     include-in-header:
       text: |
         \usepackage{titlesec}
         \usepackage{graphicx}
-        \usepackage{setspace}  
+        \usepackage{setspace}
         \usepackage{wrapfig}
         \usepackage{titling}
+        \usepackage{subcaption}
         \pretitle{\begin{center}\large\bfseries}
         \titleformat{\section}{\normalsize\bfseries}{\thesection}{1em}{}
         \titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
-editor: 
-  markdown: 
+
+editor:
+  markdown:
     wrap: sentence
 ---
 \thispagestyle{empty}
@@ -50,26 +62,23 @@ Replication materials and dataset available at:
 
 \doublespacing
 
-\qquad In 2010, the Affordable Care Act (ACA) was successfully signed into law and fully implemented in 2014 by President Barack Obama to reform the American healthcare system. Today, it is debated as the most significant and extensive federal health policy since Medicare (Manchikanti et al, 2017). The ACA prohibited insurance companies from implementing annual limits and discriminating against individuals with pre-existing conditions (Assistant Secretary for Public Affairs, 2022a; Assistant Secretary for Public Affairs, 2022b), mandated that insurance providers must provide a public reason if they intend on raising premiums by 10% or more (U.S. Centers for Medicare & Medicaid Services, 2024), and required that public and private insurers cover a minimum of ten essential health benefits for all enrollees (HealthCare.gov, 2025b). The requirement that insurers cover ten essential health benefits is the central focus of this paper, as significant gaps and workarounds within this policy affect women and transgender individuals uniquely. For example, there are religious and moral exceptions for faith-based organizations and qualifying non-profits, as these groups are able to request exemption from providing their employees insurance coverage, such as for contraceptive services (the Internal Revenue Service, the Employee Benefits Security Administration, and the Health and Human Services Department, 2018).
+\qquad In 2010, the Affordable Care Act (ACA) was successfully signed into law and fully implemented in 2014 by President Barack Obama to reform the American healthcare system. Today, it is debated as the most significant and extensive federal health policy since Medicare (Manchikanti et al, 2017). The ACA prohibited insurance companies from implementing annual limits and discriminating against individuals with pre-existing conditions (Assistant Secretary for Public Affairs, 2022a; Assistant Secretary for Public Affairs, 2022b), mandated that insurance providers must provide a public reason if they intend on raising premiums by 10% or more (U.S. Centers for Medicare & Medicaid Services, 2024), and required that public and private insurers cover a minimum of ten essential health benefits for all enrollees (HealthCare.gov, 2025b). Although the ACA aimed to address a multitude of the public’s health insurance coverage gaps, ambiguity remains within this policy that distinctly affects women and transgender individuals. For example, there are religious and moral exceptions for faith-based organizations and qualifying non-profits, as these groups are able to request exemption from providing their employees insurance coverage, such as for contraceptive services (the Internal Revenue Service, the Employee Benefits Security Administration, and the Health and Human Services Department, 2018).
 \vspace{-1.5ex}
 
-\qquad For those gender-specific health benefits that are exempt from obligatory coverage, the responsibility to require such coverage consequently falls to the states (HealthCare.gov, 2025b). The politics of coverage are particularly imperative for women (Nicholas, 2000) and transgender individuals (Slagstad, 2021), whose healthcare needs have been historically overlooked and highly politicized. Although men’s healthcare is less politicized, research shows that preventive and reproductive services for men, such as vasectomies and prostate cancer screenings, are inconsistently covered and often underutilized due to structural and policy-level gaps (Moyer, 2012; Sandman, Simantov, & An, 2000).
+\qquad Additionally, the ACA’s ten essential health benefits policy exempts some gender-specific healthcare services and resources completely from obligatory coverage. This consequently leaves the responsibility to require compensation for such services to the states (HealthCare.gov, 2025b), where the politics of coverage are particularly imperative for women (Nicholas, 2000) and transgender individuals (Slagstad, 2021), whose healthcare needs have been historically overlooked and highly politicized. Although men’s healthcare is generally less politicized, research shows that reproductive and preventive services for men, such as vasectomies and prostate cancer screenings, are inconsistently covered and often underutilized due to policy-level gaps (Moyer, 2012; Sandman, Simantov, & An, 2000). For this reason, male reproductive services can be dismissed or not taken seriously, latently reinforcing the expectation that reproductive responsibilities should fall mostly on women. 
 \vspace{-1.5ex}
 
-\qquad The primary goal of this paper is to examine these gaps and inconsistencies in coverage through political institutions, focusing in particular on women’s representation in state legislatures. Existing research has pointed towards the notion that women contribute uniquely to policy advancement in areas that disproportionately affect them, a phenomenon known as substantive representation (Schwindt-Bayer et al., 2005; Swers, 2002). Such areas include reproductive rights, family and child-related policies, economic security, and broader equality measures (Caiazza, 2008; La, 2023). Because women have historically held a minority of seats in state legislatures, this naturally supports examining increased levels of women’s legislative representation as a potential mechanism for passing more inclusive healthcare coverage policies. We include transgender and men’s healthcare coverage laws to evaluate the extent to which women legislators’ influence extends beyond women-specific policies, allowing us to compare effects across different gendered constituencies.
+\qquad The primary goal of this paper is to examine these gaps and inconsistencies in the ten essential health benefits policy through political institutions, focusing in particular on women’s representation in state legislatures. Existing research lends support to the belief that women contribute uniquely to policy advancement in areas that disproportionately affect them, a phenomenon known as descriptive representation (Schwindt-Bayer et al., 2005; Swers, 2002). Such areas include reproductive rights, family and child-related policies, economic security, and broader equality measures (Caiazza, 2008; La, 2023). Because women have historically held a minority of seats in state legislatures, this naturally supports examining increased levels of women’s legislative representation as a potential mechanism for passing more inclusive healthcare coverage policies. We include transgender and men’s healthcare coverage laws to evaluate the extent to which women legislators’ influence extends beyond women-specific policies, allowing us to compare effects across different gendered constituencies.
+\vspace{-6ex}
+
+\qquad We introduce a novel state-year panel dataset (2010–2024) containing information on insurance mandates for contraceptives, abortion, fertility treatments, vasectomies, erectile dysfunction treatments, prostate cancer screenings, gender-affirming surgery, and transgender hormone therapy, along with data on the gender composition of state legislatures to interrogate this relationship. Using two-way fixed effects models, we estimate the effect of higher proportions of women in state legislatures on the passage of these gender-specific healthcare mandates, before and after adjusting for partisanship. 
 \vspace{-1.5ex}
 
-\qquad We introduce a novel state-year panel dataset (2010–2024) containing information on insurance mandates for contraceptives, abortion, fertility treatments, vasectomies, erectile dysfunction treatments, prostate cancer screenings, gender-affirming surgery, and transgender hormone therapy, along with data on the gender composition of state legislatures to interrogate this relationship. Using two-way fixed effects models, we estimate the effect of women’s legislative representation on the passage of these gender-specific healthcare mandates before and after controlling for partisanship.
-\vspace{-1.5ex}
-
-\qquad We find that women legislators significantly enhance the likelihood of enacting policies affecting women’s healthcare, followed by transgender healthcare policies, with the smallest effects observed for men’s healthcare policies.
+\qquad The average treatment effects from the models indicate that increased women’s representation in state legislatures is linked to a higher likelihood of enacting women’s health-related policies. In other words, we find that women legislators significantly enhance the possibility of policy passage when it relates to women’s healthcare. This effect is similar for transgender healthcare policies, and the smallest effects were observed for men’s healthcare policies. Adjusting for partisanship produced only minor changes in the estimated effects, often resulting in slightly higher observed outcomes. 
 
 # Related Literature
 
-\qquad There is a large body of literature on the effects of women’s political involvement.
-Certain cross-country analyses yield that the promotion of women’s political empowerment (WPE) and greater proportions of women in governmental positions leads to better economic outcomes, such as subsequent growth in GDP per capita, technological advancements, and greater economic equality (Dahlum et al., 2022; Kim, 2022).
-Other global studies corroborate this, demonstrating that greater representation of women in policymaking is associated with improved outcomes in areas such as child health, maternity leave policies, work-family balance, and gender-sensitive laws (Asiedu et al., 2018; Rustagi & Akter, 2022; Kittilson, 2008; Weeks, 2017).
-Such a body of literature suggests that women’s leadership, legislative participation, and institutional empowerment, can lead to substantial societal benefits, not only for women specifically, but for the country as a whole, as these laws may be linked to broader national social and economic progress (IWPR, 2024; the World Bank, 2023; OECD, 2017).
+\qquad There is a large body of literature on the effects of women’s political involvement. Certain cross-country analyses yield that the promotion of women’s political empowerment (WPE) and greater proportions of women in governmental positions leads to better economic outcomes, such as subsequent growth in GDP per capita, technological advancements, and greater economic equality (Dahlum et al., 2022; Kim, 2022). Other global studies corroborate this, demonstrating that greater representation of women in policymaking is associated with improved outcomes in areas such as child health, maternity leave policies, work-family balance, and gender-sensitive laws (Asiedu et al., 2018; Rustagi & Akter, 2022; Kittilson, 2008; Weeks, 2017). Such a body of literature suggests that women’s leadership, legislative participation, and institutional empowerment, can lead to substantial societal benefits, not only for women specifically, but for the country as a whole, as these laws may be linked to broader national social and economic progress (IWPR, 2024; the World Bank, 2023; OECD, 2017).
 \vspace{-1.5ex}
 
 \qquad Countries that implement institutional mechanisms to promote gender equality in political representation present a compelling case for examining the effects of women’s political leadership. For example, India’s reservation system in certain political offices requires positions to be filled by women on a rotating basis through random assignment. Hessami & Lopes da Fonseca (2020) found that women who lead at this level are more likely to allocate resources in ways that reflect their own preferences, which subsequently results in greater educational attainment for girls. Specifically in Rwanda, where 30% of parliamentary seats have been reserved for women since 2003, women representatives discussed how the increased representation has made it easier for them to introduce and discuss women’s issues (Devlin & Elgie, 2008). Bauer and Burnet (2013) strengthen this idea, claiming that women’s perspectives are no longer dismissed as they were in the past and that their increased presence has transformed perceptions of women as political leaders. They also note that gender quotas have contributed to greater access to education for women and girls, a pattern similarly observed by Hessami & Lopes da Fonseca (2020).
@@ -78,8 +87,7 @@ Such a body of literature suggests that women’s leadership, legislative partic
 \qquad In the context of the U.S., women currently hold 28.2% of seats in the 119th Congress, a record high (Center for American Women and Politics, 2025a). However, the protracted timeline of this progress reflects the persistence of patriarchal norms that are ingrained in U.S. society, making it challenging for women to circumvent the structural inequalities that place them in a disadvantageous position (Silalahi, 2024). Studies examining the effect of women’s political power in the U.S. provide substantive evidence for favorable policy outcomes in areas pertaining to reproductive rights, family and child-related policies, economic security, and broader equality measures. Caiazza’s (2008) OLS analysis found that states with higher proportions of women legislators were strongly associated with advances in women-focused policy areas even after controlling for institutional resources and political attitudes. More recent work by La (2023) refines this relationship, showing that women legislators exert significant influence on the percentages of these types of policies being introduced, though success depends on partisanship and the proportion of women in office. It is worth noting that existing literature on this topic within the U.S. has typically relied on only one to three years of observable data, providing a limited perspective on the policy implications of women’s representation. This study seeks to offer a more extensive and comprehensive analysis of women’s representation across all fifty states and over fourteen years.
 \vspace{-1.5ex}
 
-\qquad This line of inquiry also resonates with feminist scholarship emphasizing the importance of incorporating marginalized voices into leadership spaces, as those who embody these lived experiences are best positioned to understand their associated constraints and complexities. In feminist and postcolonial theory, critiques of mainstream discourse invite us to reconsider the identities that are granted space within leadership roles, and those who have been excluded from them (Combahee River Collective, 1977; hooks, 1989; Spivak, 1988).
-These frameworks impart how the presence of historically excluded groups within dominant decision-making institutions may expand the range of issues recognized as politically salient. Applying this ideology to the legislative context in the U.S. suggests that women’s representation may sensibly shape gender-specific healthcare coverage laws.
+\qquad This line of inquiry also resonates with feminist scholarship emphasizing the importance of incorporating marginalized voices into leadership spaces, as those who embody these lived experiences are best positioned to understand their associated constraints and complexities. In feminist and postcolonial theory, critiques of mainstream discourse invite us to reconsider the identities that are granted space within leadership roles, and those who have been excluded from them (Combahee River Collective, 1977; hooks, 1989; Spivak, 1988). These frameworks impart how the presence of historically excluded groups within dominant decision-making institutions may expand the range of issues recognized as politically salient. Applying this ideology to the legislative context in the U.S. suggests that women’s representation may sensibly shape gender-specific healthcare coverage laws.
 \vspace{-1.5ex}
 
 \qquad On a similar note, defining what constitutes women's interests and the issues that reflect their needs and priorities within a legislative agenda is inherently context-dependent. Rather than assuming that “women” exist as a unified, pre-political group with fixed interests, the constitutive representation of gender (CRG) approach highlights how “women’s interests” are constructed and contested through political claims-making (Celis et al., 2009). The ongoing contestation over reproductive rights in the post-Dobbs U.S. vividly illustrates this process. With abortion policy making devolved to the states, lawmakers have been tasked not only with setting policy but with actively defining what is necessary or permissible for women’s bodies, thereby shaping what counts as “women’s interests.” As Bor et al. (2025) show, these policies do not reflect public preferences but instead reflect legislators’ own claims about what women should want or need. At the same time, women’s rights groups, activists, courts, and other civil society actors have mobilized to resist these definitions, offering competing constructions of gender and autonomy. This struggle demonstrates that “women’s interests” are not natural or given but are constituted through ongoing, contested processes across multiple sites of representation. Therefore, what is defined as a “women-friendly” policy in this study should not be universally applied as “women’s interests.” Rather, it reflects what we view as politically and socially salient given the specific cultural and institutional context of women’s healthcare in the U.S. at this moment. Similar dynamics apply to how policymakers construct and contest the interests of transgender healthcare, and while the analysis also includes men’s healthcare policies, these have not historically been subject to the same forms of political regulation and contestation.
@@ -144,8 +152,9 @@ As such, it functions as a time-varying confounder. Similarly, the subsequent st
 \begin{figure}[h]
   \centering
   \includegraphics[width=.9\textwidth]{../paper/images/dag.pdf}
-  \label{fig:dag}
+  \captionsetup{labelfont=bf}
   \caption{Directed Acyclic Graph}
+  \label{fig:dag}
 \end{figure}
 
 \qquad To address these concerns, we estimate two-way fixed effects models that include state and year fixed effects.
@@ -193,7 +202,10 @@ Therefore, these results are interpreted carefully and future work could build o
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=.9\textwidth]{../working files/figures/women.png}
+  \renewcommand{\thefigure}{2.1}
+  \captionsetup{labelfont=bf}
+  \caption{ATEs on Women-Friendly Policy}
+  \includegraphics[width=.9\textwidth]{../working files/figures/women_1.pdf}
   \label{fig:women}
 \end{figure}
 
@@ -210,8 +222,11 @@ In addition, there is an aggregated contraceptives variable to encapsulate the f
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=.9\textwidth]{../working files/figures/men.png}
-  \label{fig:women}
+  \renewcommand{\thefigure}{3.1}
+  \captionsetup{labelfont=bf}
+  \caption{ATEs on Men-Friendly Policy}
+  \includegraphics[width=.9\textwidth]{../working files/figures/men_1.pdf}
+  \label{fig:men}
 \end{figure}
 
 \qquad For the men’s health-related policies, the average treatment effects from both TWFE models indicate that as women’s representation increases, men’s health-related policies also become slightly more likely to be enacted. The adjusted treatment effects changed minimally, with the largest shifts observed in the aggregated men’s health variable and the prostate cancer screening coverage variable, though even these effects changed by only a few thousandths.
@@ -226,14 +241,17 @@ In addition, there is an aggregated contraceptives variable to encapsulate the f
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=.9\textwidth]{../working files/figures/trans.png}
+  \renewcommand{\thefigure}{4.1}
+  \captionsetup{labelfont=bf}
+  \caption{ATEs on Trans-Friendly Policy}
+  \includegraphics[width=.9\textwidth]{../working files/figures/trans_1.pdf}
   \label{fig:trans}
 \end{figure}
 
 \qquad For transgender policies, the adjusted and unadjusted treatment effects were positive and statistically significant for the transgender-aggregated variable and gender affirming care policy. On the other hand, the treatment effect for hormone therapy was positive but statistically insignificant. The adjusted model’s treatment effects remained relatively unchanged, both behaving in a similar manner as described above.
 \vspace{-1.5ex}
 
-\qquad The treatment effect for the transgender-friendly aggregated variable was .46 (unadjusted) and .48 (adjusted), indicating that a 10 percentage point increase in women’s representation would make transgender-friendly policies 4.6 to 4.8 percent more likely to be enacted. Therefore, if state legislatures were entirely composed of women, the TWFE models suggest that these policies would be 46 to 48 percent more likely to pass (Appendix B, Figure 4.2).
+\qquad The treatment effect for the transgender-friendly aggregated variable was .46 (unadjusted) and .48 (adjusted), indicating that a 10 percentage point increase in women’s representation would make transgender-friendly policies 4.6 to 4.8 percent more likely to be enacted. Therefore, if state legislatures were entirely composed of women, the TWFE models suggest that these policies would be 46 to 48 percent more likely to pass **(Appendix B, Figure 4.2)**.
 
 # Discussion
 
@@ -243,7 +261,7 @@ In addition, there is an aggregated contraceptives variable to encapsulate the f
 The most substantial effects were observed for historically marginalized genders, implying that women legislators play a critical role in passing inclusive healthcare policies. More specifically, the largest treatment effect was observed for the aggregated variable summarizing women’s healthcare policy adoption, underscoring the idea that women legislators are most effective in addressing the concerns and needs of the women they represent. Across all policy areas we examined, these effects remained largely unchanged after controlling for partisanship, reinforcing the conclusion that women legislators contribute uniquely to policy advancement beyond what party affiliation alone could predict.
 \vspace{-1.5ex}
 
-\qquad These findings are consistent with prior research on descriptive representation (Schwindt-Bayer et al., 2005; Swers, 2002), as the effect of women’s legislative representation on policy outcomes is not solely attributable to party affiliation, but reflects how women legislators are more responsive to issues that disproportionately affect them and are more persistent in advancing legislative solutions. Other studies demonstrate how social identities, such as race and gender, can have political effects distinct from party as well. Research has shown that these identities separately shape political efficacy and engagement (Merolla et al., 2012, on race) and influence the sponsorship and advocacy of legislation that benefits marginalized communities (Bratton et al., 1999, on race and gender; Mansbridge, 1999, on gender). That being said, an increase in women’s representation in legislatures holds a remarkable ability to shape policy outcomes for women and transgender individuals in ways that are typically neglected.
+\qquad These findings are consistent with prior research on descriptive representation (Schwindt-Bayer et al., 2005; Swers, 2002), as the effect of women’s legislative representation on policy outcomes is not solely attributable to party affiliation, but reflects how women legislators are more responsive to issues that disproportionately affect them and are more persistent in advancing legislative solutions. Other studies demonstrate how social identities, such as race and gender, can have political effects distinct from party as well. Research has shown that these identities separately shape political efficacy and engagement (Merolla et al., 2012, on race) and influence the sponsorship and advocacy of legislation that benefits marginalized communities (Bratton et al., 1999, on race and gender; Mansbridge, 1999, on gender). That being said, an increase in women’s representation in  state legislatures holds a remarkable ability to shape policy outcomes for women and transgender individuals.
 
 ## Policy Implications
 
@@ -265,16 +283,251 @@ This disparity in effect size may be explained by the growing urgency to protect
 
 \newpage
 
-\centering \textbf{References}
+\phantomsection
+\begin{center}
+\textbf{References}
+\end{center}
+\addcontentsline{toc}{section}{References}
+
+\setlength{\parindent}{-0.2in}
+\setlength{\leftskip}{0.2in}
+\setlength{\parskip}{2pt}
+\noindent
+
+American Cancer Society. (2023). Insurance Coverage for Prostate Cancer Screening. American 
+Cancer Society. Retrieved from <https://www.cancer.org/cancer/types/prostate-cancer/detection-diagnosis-staging/insurance-coverage.html>
+
+Asiedu, E., Branstette, C., Gaekwad-Babulal, N., & Malokele, N. (2018, January). The effect of 
+women’s representation in parliament and the passing of gender sensitive policies. In ASSA Annual Meeting (Philadelphia, 5-7 January). <https://www.aeaweb.org/conference.>
+
+Assistant Secretary for Public Affairs. (2022a). Lifetime & Annual Limits. U.S. Department of 
+Health and Human Services. Retrieved from <https://www.hhs.gov/healthcare/about-the-aca/benefit-limits/index.html>
+
+Assistant Secretary for Public Affairs. (2022b). Pre-Existing Conditions. U.S. Department of 
+Health and Human Services. Retrieved from <https://www.hhs.gov/healthcare/about-the-aca/pre-existing-conditions/index.html> 
+
+Bauer, G., & Burnet, J. E. (2013). Gender quotas, democracy, and women's representation in 
+Africa: Some insights from democratic Botswana and autocratic Rwanda. Women's Studies International Forum, Volume 41, Part 2, Pages 103-112, ISSN 0277-5395, <https://doi.org/10.1016/j.wsif.2013.05.012.>
+
+Bor, A., Doherty, D., & Simonovits, G. (2025). Federalism and representation: Evidence from 
+state abortion laws in the aftermath of Dobbs vs. Jackson women’s health organization. PNAS Nexus, Volume 4, Issue 5, pgaf125, <https://doi.org/10.1093/pnasnexus/pgaf125>
+
+Bratton, K. A., Haynie, K. L., & Reingold, B. (1999). Agenda setting and African American 
+women in state legislatures. Journal of Women, Politics & Policy, 20(3), 65–84. <https://doi.org/10.1300/J501v20n03_05>
+
+Browne, C. (2024). The Annulment of Roe v. Wade: An Analysis of State Policy
+Changes Ensuing from Dobbs v. Jackson. The Institute for Public Policy
+and Social Research, Policy Wonk Blog. 
+
+Burnett, A. L., Edwards, N. C., Barrett, T. M., Nitschelm, K. D., & Bhattacharyya, S. K. (2020). 
+Addressing Health-Care System Inequities in the Management of Erectile Dysfunction: A Call to Action. American Journal of Men’s Health. 14(5). doi:10.1177/1557988320965078
+
+Caddy, C., Temple-Smith, M., & Coombe, J. (2023). Who does what? Reproductive 
+responsibilities between heterosexual partners. Culture, Health & Sexuality, 25(12), 1640–1658. <https://doi.org/10.1080/13691058.2023.2173800>
+
+Caiazza, A. (2004). Does Women’s Representation in Elected Office Lead to Women-Friendly 
+Policy? Analysis of State-Level Data. Women & Politics, 26(1), 35–70. <https://doi.org/10.1300/J014v26n01_03>
+
+Callaway, B., & Sant’Anna, P. H. C. Difference-in-Differences with multiple time periods, 
+Journal of Econometrics, Volume 225, Issue 2, 2021, Pages 200-230, ISSN 0304- 4076, <https://doi.org/10.1016/j.jeconom.2020.12.001.>
+
+Celis, K., Childs, S., Kantola, J., & Krook, M. L. (2009). Defining Women’s Interests: A 
+Comparative Mapping of Representative Claims. In First European Conference on Politics and Gender.
+
+Center for American Women and Politics. (2025a). Current Numbers. New Brunswick, NJ: 
+Center for American Women and Politics, Eagleton Institute of Politics, Rutgers University-New Brunswick. <https://cawp.rutgers.edu/facts/current-numbers/>
+
+Center for American Women and Politics. (2025b). Women Elected Officials by Location. 
+Eagleton Institute of Politics. Retrieved from <https://cawpdata.rutgers.edu/women-elected-officials> 
+
+Combahee River Collective. (1977). The Combahee River Collective statement. Retrieved from 
+<https://americanstudies.yale.edu/sites/default/files/files/Keyword%20Coalition_Readings.pdf>
+
+Dawson, L., Sobel, L., Pestania, K., Kates, J., Artiga, S., & Burns, A. (2024). The Biden 
+Administration’s Final Rule on Section 1557 Non-Discrimination Regulations Under the ACA. Kaiser Family Foundation. Retrieved from <https://www.kff.org/affordable-care-act/issue-brief/the-biden-administrations-final-rule-on-section-1557-non-discrimination-regulations-under-the-aca/>
+
+Devlin, C., & Elgie, R. (2008). The Effect of Increased Women's Representation in Parliament: 
+The Case of Rwanda. Parliamentary Affairs, Volume 61, Issue 2, Pages 237–254, <https://doi.org/10.1093/pa/gsn007>
+
+Employee Benefits Security Administration. (2021). FAQs about Affordable Care 
+Implementation Part 48. U.S. Department of Labor. Retrieved from <https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/faqs/aca-part-48>
+
+Frederick, B. (2013). Gender and roll call voting behavior in congress: a cross-chamber analysis. 
+American Review of Politics, 34, 1-20.
+
+Guttmacher Institute. (2025). Insurance Coverage of Contraceptives. Guttmacher Institute. 
+Retrieved from <https://www.guttmacher.org/state-policy/explore/insurance-coverage-contraceptives> 
+
+HealthCare.gov. (2025). What Marketplace health insurance plans cover. HealthCare.gov. 
+Retrieved from <https://www.healthcare.gov/coverage/what-marketplace-plans-cover/>
+
+Herman, J. L., Flores, A. R., & O’Neill, K. K. (2022, June). How many adults and youth identify 
+as transgender in the United States? The Williams Institute, UCLA School of Law. Retrieved from <https://williamsinstitute.law.ucla.edu/publications/trans-adults-united-states/>
+
+Hessami, Z., & Lopes da Fonseca, M. (2020). Female Political Representation and Substantive 
+Effects on Policies: A Literature Review. CESifo Working Paper No. 8155, <http://dx.doi.org/10.2139/ssrn.3555582>
+
+hooks, b. (1989). Talking back: thinking feminist, thinking black. South End Press.
+
+Imai, K., & Kim, I. S. (2021). On the use of two-way fixed effects regression models for causal 
+inference with panel data. Political Analysis, 29(3), 405-415. 
+
+Kaiser Family Foundation. (2025). Interactive: How State Policies Shape Access to Abortion 
+Coverage. Kaiser Family Foundation. Retrieved from <https://www.kff.org/womens-health-policy/issue-brief/interactive-how-state-policies-shape-access-to-abortion-coverage/> 
+
+Kittilson, M. C. (2008). Representing women: The adoption of family leave in comparative 
+perspective. The journal of politics, 70(2), 323-334.
+
+La, Hoan (2023) Women’s Representation in State Legislatures and Women-Friendly Policy 
+Outcomes. Commonwealth Review of Political Science: Vol. 6: No. 1, Article 1.
+DOI: <https://doi.org/10.61611/2994-0044.1041>
+
+LegiScan. (2025). National Legislative Search. LegiScan. Retrieved from 
+<https://legiscan.com/gaits/search>
+
+Manchikanti, et al. (2017). Evolution of US Health Care Reform. Pain Physician, 20(3), pp. 107 - 110. Retrieved from <https://www.painphysicianjournal.com/current/pdf?article=NDMwMQ%253D%253D&journal=104> 
+
+Mansbridge, J. (1999). Should blacks represent blacks and women represent women? A contingent “yes.” The Journal of Politics, 61(3), 628–657. <https://doi.org/10.2307/2647821>
+
+Maven Clinic. (2024). In what states is IVF covered by insurance? A comprehensive guide for 
+HR leaders. Maven Clinic. Retrieved from <https://www.mavenclinic.com/post/in-what-states-is-ivf-covered-by-insurance>
+
+Moyer, V. A., & U.S. Preventive Services Task Force (2012). Screening for prostate cancer: U.S. 
+Preventive Services Task Force recommendation statement. Annals of internal medicine, 157(2), 120–134. <https://doi.org/10.7326/0003-4819-157-2-201207170-00459>
+
+Nicholas, F. (2000). History of the Women’s Health Movement in the 20th Century. Journal of 
+Obstetric, Gynecologic & Neonatal Nursing, 29(1), 56 - 64. Retrieved from <https://www.jognn.org/article/S0884-2175(15)33790-4/fulltext>
+
+Osborn, T. (2012). How Women Represent Women: Political Parties, Gender and Representation 
+in the State Legislatures. Oxford Academic, pp. 1-240. Retrieved from <https://doi.org/10.1093/acprof:oso/9780199845347.003.0001>
+
+Rogers, H. (2024). The Scope of ACA Section 1557: “Health Program or Activity”. Library of 
+Congress. Retrieved from <https://www.congress.gov/crs-product/LSB11160>
+
+Rustagi, N., & Akter, S. (2022). The impact of women's political representation on child health 
+outcomes during 1990-2020: Evidence from a global dataset. Social Science & Medicine, 312, Article 115366. <https://doi.org/10.1016/j.socscimed.2022.115366>
+
+Sandman, D. R., Simantov, E., An, C., Commonwealth Fund., & Louis Harris and Associates. 
+(2000). Out of touch : American men and the health care system : Commonwealth Fund men’s and women’s health survey findings. Commonwealth Fund.
+
+Silalahi, E. S. M. (2024). Women's political participation in the United States after women's 
+suffrage: women's representation in the legislature of the house of representatives and the senate. JPPI (Jurnal Penelitian Pendidikan Indonesia), Vol 10, No 3, <https://doi.org/10.29210/020244071>
+
+Slagstad, K. (2021). The Political Nature of Sex - Transgender in the History of Medicine. The 
+New England Journal of Medicine, 384(11), 1070 – 1074. Retrieved from <https://www.kennedykrieger.org/sites/default/files/library/documents/about-us/O-HEID/The%20Political%20Nature%20of%20Sex-%20Transgender%20in%20the%20History%20of%20Medicine.pdf>
+
+Spivak, G. C. (1988). Can the Subaltern Speak? Die Philosophin 14 (27):42-58.
+
+Swers, Michele. (2004). The Difference Women Make: The Policy Impact of Women in 
+Congress. Bibliovault OAI Repository, the University of Chicago Press. 10.1177/009430610403300102.
+
+The Internal Revenue Service, the Employee Benefits Security Administration, and the Health 
+and Human Services Department. (2018). Moral Exemptions and Accommodations for Coverage of Certain Preventive Services Under the Affordable Care Act. Retrieved from <https://www.federalregister.gov/documents/2018/11/15/2018-24514/moral-exemptions-and-accommodations-for-coverage-of-certain-preventive-services-under-the-affordable>
+
+The National Conference of State Legislatures. (2025). State Partisan Composition. The 
+National Conference of State Legislatures. Retrieved from <https://www.ncsl.org/about-state-legislatures/state-partisan-composition>
+
+Thomsen, D. (2015). Why So Few (Republican) Women? Explaining the Partisan Imbalance of 
+Women in the U.S. Congress. Legislative Studies Quarterly, 40(2), pp. 295-323. Retrieved from <http://www.jstor.org/stable/43862528>
+
+Tschann, M., & Soon, R. (2015). Contraceptive Coverage and the Affordable Care Act. 
+Obstetrics and gynecology clinics of North America, 42(4), 605–617. Retrieved from <https://pmc.ncbi.nlm.nih.gov/articles/PMC5576988/>
+
+U.S. Centers for Medicare & Medicaid Services. (2024). Fighting Unreasonable Health 
+Insurance Premium Increases. U.S. Centers for Medicare & Medicaid Services. Retrieved from <https://www.cms.gov/cciio/resources/fact-sheets-and-faqs/ratereview05192011a>
+
+Weeks, A.C. (2017). Quotas Matter: The Impact of Gender Quota Laws on Work-Family 
+Policies. Working paper. 
+
+\setlength{\parindent}{0in}
+\setlength{\leftskip}{0in}
+\setlength{\parskip}{0pt}
 
 \newpage
 
-\centering \textbf{Appendix A}
+\phantomsection
+\begin{center}
+\textbf{Appendix A}
+\end{center}
+\addcontentsline{toc}{section}{Appendix A}
 
 \newpage
 
-\centering \textbf{Appendix B}
+\phantomsection
+\begin{center}
+\textbf{Appendix B}
+\end{center}
+\addcontentsline{toc}{section}{Appendix B}
+
+\begin{figure}[h]
+  \centering
+  \captionsetup{labelfont=bf}
+
+  \begin{subfigure}[2.2]{0.8\textwidth}
+    \centering
+    \caption{Estimated Effect of Women’s Representation on Women-Friendly Policy}
+    \includegraphics[height=0.5\textwidth]{../working files/figures/predict_women_paper.pdf}
+    \label{fig:B1}
+  \end{subfigure}
+
+  \vspace{1em}
+
+  \begin{subfigure}[3.2]{0.8\textwidth}
+    \centering
+    \caption{Estimated Effect of Women’s Representation on Men-Friendly Policy}
+    \includegraphics[height=0.5\textwidth]{../working files/figures/predict_men_paper.pdf}
+    \label{fig:B2}
+  \end{subfigure}
+  
+  \vspace{1em}
+  
+  \begin{subfigure}[4.2]{0.8\textwidth}
+    \centering
+    \caption{Estimated Effect of Women’s Representation on Trans-Friendly Policy}
+    \includegraphics[height=0.5\textwidth]{../working files/figures/predict_trans_paper.pdf}
+    \label{fig:B3}
+  \end{subfigure}
+
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \renewcommand{\thefigure}{2.2}
+  \captionsetup{labelfont=bf}
+  \caption{Estimated Effect of Women’s Representation on Women-Friendly Policy}
+  \includegraphics[width=.8\textwidth]{../working files/figures/predict_women_paper.pdf}
+  \label{fig:womenpredict}
+\end{figure}
+
+  \vspace{-8em}
+
+\begin{figure}[h]
+  \centering
+  \renewcommand{\thefigure}{3.2}
+  \captionsetup{labelfont=bf}
+  \caption{Estimated Effect of Women’s Representation on Men-Friendly Policy}
+  \includegraphics[width=.8\textwidth]{../working files/figures/predict_men_paper.pdf}
+  \label{fig:menpredict}
+\end{figure}
+
+  \vspace{-8em}
+
+\begin{figure}[h]
+  \centering
+  \renewcommand{\thefigure}{4.2}
+  \captionsetup{labelfont=bf}
+  \caption{Estimated Effect of Women’s Representation on Trans-Friendly Policy}
+  \includegraphics[width=.8\textwidth]{../working files/figures/predict_trans_paper.pdf}
+  \label{fig:transpredict}
+\end{figure}
 
 \newpage
 
-\centering \textbf{Appendix C}
+\phantomsection
+\begin{center}
+\textbf{Appendix C}
+\end{center}
+\addcontentsline{toc}{section}{Appendix C}
+
+\qquad Once data collection was finished in Excel, the datasets were saved as comma-separated value (csv) files and imported into RStudio for analysis. All data cleaning, merging, modeling, and visualization were conducted in a RMarkdown file. A total of forty-eight regressions were run, thirty-two of which were TWFE, using the `plm` package (Croissant & Millo, 2018). To efficiently manage the large number of models, separate vectors were created for each gender and their corresponding policies, such as dependent_variables_women, and for loops were utilized to systematically run regressions for every dependent variable in each group. For example, for the set of women-friendly policies, an empty list called models_women was created. Each dependent variable in this category (dependent_variables_women) was looped over, a formula was constructed relating the dependent variable to the main explanatory variable (prop_leg_women), and then a TWFE regression was ran using the plm() function, with state and year set as the panel indices. Once all the models were estimated, the results were tidyed, and confidence intervals were extracted and combined into a single data frame for easier interpretation and visualization. 
+
