@@ -200,6 +200,8 @@ Therefore, these results are interpreted carefully and future work could build o
 
 \qquad All figures in this section plot the effects on each policy from the unadjusted model **(Model 1.1)**, adjusted model **(Model 1.2)**, and OLS regressions **(Model 2)**. Aggregated variables are in bold, which represent a composite measure of all policies. This discussion will focus on the TWFE estimates.[^3] Additional figures are provided in \textbf{Appendix \ref{app:figures}}.[^4]
 
+\qquad All figures in this section plot the effects on each policy from the unadjusted model **(Model 1.1)**, adjusted model **(Model 1.2)**, and OLS regressions **(Model 2)**. Aggregated variables are in bold, which represent a composite measure of all policies. This discussion will focus on the TWFE estimates.[^3] Additional figures are provided in **Appendix B.**[^4]
+
 [^3]: OLS results are similar, but with smaller effects. I included them in the main-text figures for comparison.
 [^4]: You can zoom in on these; they are provided at a high resolution. 
 
@@ -534,6 +536,8 @@ Hormone Therapy & 3 & Trans-Friendly \\
   \end{subfigure}
 
 \end{figure}
+
+\newpage
 
 \section{Rstudio}
 \label{app:R}
