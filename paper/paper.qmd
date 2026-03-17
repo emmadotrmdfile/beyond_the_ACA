@@ -44,7 +44,7 @@ editor:
 
 \begin{abstract}
 \doublespacing
-The Affordable Care Act requires both public and private insurers to cover ten essential health benefits for their policyholders. Some gender-specific health benefits are exempt from this obligatory coverage, leaving the issue of mandated coverage to the states. We collect a state-level dataset containing information on women's, men's, and transgender healthcare policies that mandate coverage, along with data on the gender composition of state legislatures. Prior work has found that the gender composition of state legislatures affects policies related to reproductive rights, family and child-related policies, economic security, and broader equality measures. However, we do not have an understanding of how legislative gender composition affects coverage for gender-specific healthcare policies. We estimate the relationship between women’s legislative representation and the adoption of these gender-specific insurance mandates using causal inference. We expect that an increased presence of women legislators will notably raise the likelihood of women-friendly policies being enacted, followed by transgender health related policy and then men’s health related policy. 
+The Affordable Care Act (ACA) requires both public and private insurers to cover ten essential health benefits for their policyholders. Some gender-specific health benefits are exempt from this obligatory coverage, leaving the issue of mandated coverage to the states. Prior work has found that the gender composition of state legislatures affects policies related to reproductive rights, family and child-related policies, economic security, and broader equality measures. However, we do not have an understanding of how legislative gender composition affects coverage for gender-specific healthcare policies. We collect a state-level dataset of insurance coverage mandates for women’s, men’s, and transgender healthcare services that are excluded from the ACA, along with data on the gender composition of state legislatures to estimate the relationship between women’s legislative representation and the adoption of these policies. We expect that an increased presence of women legislators will notably raise the likelihood of women-friendly policies being enacted, followed by transgender health related policy and then men’s health related policy.
 \end{abstract}
 
 \vfill
@@ -148,8 +148,7 @@ States with higher proportions of women legislators are often more Democratic, a
 
 ## Identification Assumption
 
-\qquad However, unobserved heterogeneity exists across states and over time, potentially confounding this relationship.
-For instance, the Dobbs v. Jackson Supreme Court ruling in 2022 represents a shift in the national policy context that may have influenced both women’s political representation and the enactment of gender-specific insurance mandates.
+\qquad Unobserved heterogeneity exists across states and over time, potentially confounding this relationship as well. For instance, the Dobbs v. Jackson Supreme Court ruling in 2022 represents a shift in the national policy context that may have influenced both women’s political representation and the enactment of gender-specific insurance mandates.
 As such, it functions as a time-varying confounder. Similarly, the subsequent state-level policy fragmentation introduces state-specific variation in the policy environment, potentially confounding the relationship between women’s representation and policy enactment across states (Browne, 2024).
 \vspace{-1.5ex}
 
@@ -162,12 +161,12 @@ As such, it functions as a time-varying confounder. Similarly, the subsequent st
 \end{figure}
 
 \qquad To address these concerns, we estimate two-way fixed effects models that include state and year fixed effects.
-State fixed effects absorb time-invariant characteristics of states, such as long-established political culture or ideology, while year fixed effects account for common national shocks, including federal judicial rulings and national movements. Conditional on these fixed effects and observed confounders, there are no unobserved time-varying state-specific factors that simultaneously affect women’s legislative representation and policy enactment.
+State fixed effects absorb time-invariant characteristics of states, such as long-established political culture or ideology, while year fixed effects account for common national shocks, including federal judicial rulings and national movements. Conditional on these fixed effects and observed confounders, there are no unobserved time-varying and state-specific factors that simultaneously affect women’s legislative representation and policy enactment.
 \vspace{-1.5ex}
 
 ## Estimation Strategy
 
-\qquad To implement this identification strategy, we estimate the following two-way fixed effects model:
+\qquad We estimate the following two-way fixed effects model:
 
 \begin{center}
 $Y_{i,t} = α_i + δ_t + τD_{i,t} + ε_{i,t}.$ \qquad \textbf{(Model 1.1)}
@@ -199,8 +198,6 @@ Therefore, these results are interpreted carefully and future work could build o
 # Results
 
 \qquad All figures in this section plot the effects on each policy from the unadjusted model **(Model 1.1)**, adjusted model **(Model 1.2)**, and OLS regressions **(Model 2)**. Aggregated variables are in bold, which represent a composite measure of all policies. This discussion will focus on the TWFE estimates.[^3] Additional figures are provided in \textbf{Appendix \ref{app:figures}}.[^4]
-
-\qquad All figures in this section plot the effects on each policy from the unadjusted model **(Model 1.1)**, adjusted model **(Model 1.2)**, and OLS regressions **(Model 2)**. Aggregated variables are in bold, which represent a composite measure of all policies. This discussion will focus on the TWFE estimates.[^3] Additional figures are provided in **Appendix B.**[^4]
 
 [^3]: OLS results are similar, but with smaller effects. I included them in the main-text figures for comparison.
 [^4]: You can zoom in on these; they are provided at a high resolution. 
