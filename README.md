@@ -1,12 +1,12 @@
-## README
+## Gendered Healthcare Policy Project (GHPP)
 
-This repository contains original datasets and an analysis related to gender composition in U.S. state legislatures and gender-specific insurance policies from 2010–2024. (for IPPSR)
+This repository contains the datasets and analysis for the **Gendered Healthcare Policy Project (GHPP)**, a causal inference analysis examining the relationship between gender composition in U.S. state legislatures and gender-specific insurance policies from 2010–2024.
 
-The datasets include:
+The project includes 3 datasets:
 
-- **State-level legislative composition**: the proportion of women legislators in each state.  
-- **Policy datasets**: gender-specific insurance mandates for women, men, and transgender-friendly policies, as well as negative/restrictive policies.  
-- **Cosponsor information**: data on cosponsorship demographics for these policies.
+- **Gendered Healthcare Policy Dataset (GHPD):** contains information on gender-specific insurance mandates for women, men, and transgender-friendly policies, as well as negative/restrictive policies.  
+- **Legislative Composition Data:**: contains information on the proportion of women legislators in each state. 
+- **Cosponsor dataset**: data on cosponsorship demographics for these policies.
 
 The repository also includes:
 
