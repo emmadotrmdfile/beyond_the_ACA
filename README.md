@@ -1,6 +1,6 @@
 ## Gendered Healthcare Policy Project (GHPP)
 
-This repository contains the datasets and analysis for the **Gendered Healthcare Policy Project (GHPP)**, a causal inference analysis examining the relationship between gender composition in U.S. state legislatures and gender-specific insurance policies from 2010–2024.
+This repository contains the datasets and analysis supporting the **Gendered Healthcare Policy Project (GHPP)**, which uses causal inference to study the impact of women’s representation on gender-specific healthcare policies across U.S. states from 2010–2024.
 
 The project includes 3 datasets:
 
