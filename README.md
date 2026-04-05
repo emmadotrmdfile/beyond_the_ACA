@@ -4,7 +4,7 @@ This repository contains the datasets and analysis supporting the **Gendered Hea
 
 The project includes 3 datasets:
 
-- **Gendered Healthcare Policy Dataset:** contains information on gender-specific insurance mandates for women, men, and transgender-friendly policies, as well as negative/restrictive policies.  
+- **Policy Dataset:** contains information on gender-specific insurance mandates for women, men, and transgender-friendly policies, as well as negative/restrictive policies.  
 - **Legislative Composition Dataset:** contains information on the proportion of women legislators in each state. 
 - **Cosponsor Dataset**: data on cosponsorship demographics for these policies.
 
